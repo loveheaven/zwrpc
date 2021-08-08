@@ -1,0 +1,13 @@
+syntax = "proto3";
+option cc_generic_services = true;
+//protoc -I=$SRC_DIR --cpp_out=$DST_DIR $SRC_DIR/xxx.proto
+message SearchRequest {
+    int64 logid = 1;
+    string userId = 2;
+}
+message SearchResponse {
+    string retVal = 1;
+}
+service Rec {
+    rpc Search (SearchRequest) returns (SearchResponse);
+}
